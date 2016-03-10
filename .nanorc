@@ -1,0 +1,8 @@
+set nowrap
+set tabsize 2
+#set tabstospaces
+#set mouse
+set const
+set autoindent
+set suspend
+set multibuffer
