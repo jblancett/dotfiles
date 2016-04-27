@@ -18,6 +18,7 @@
 	nginx-mode
 	go-mode go-eldoc go-projectile
 	yaml-mode
+	monokai-theme
 	))
 (dolist (pkg my-package-list)
   (unless (package-installed-p pkg)
@@ -45,7 +46,6 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;;; themes
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'monokai t)
 
 ;;; tabs
