@@ -3,3 +3,5 @@ saves/*
 saves*~
 elpa/*
 \#\!*
+ido.last
+projectile-bookmarks.eld
