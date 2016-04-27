@@ -20,6 +20,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;; misc
+(setq vc-follow-symlinks t)
 (setq inhibit-splash-screen t)
 (dolist (mode '(menu-bar-mode tool-bar-mode))
   (funcall mode -1))
