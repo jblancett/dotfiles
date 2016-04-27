@@ -87,6 +87,7 @@
 
 ;;; line numbers
 ;(global-linum-mode 1)
+;(setq linum-format "%4d\u2502 ")
 (setq linum-format "\u2502%4d\u2502 ")
 (global-set-key (kbd "C-x n") 'global-linum-mode)
 
