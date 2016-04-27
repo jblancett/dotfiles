@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dotfiles=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-for dotfile in $(find "$dotfiles" -maxdepth 1 -name ".*")
+for dotfile in $(find "$dotfiles" -maxdepth 1 -name ".*" ! -name '.git')
 do
     file=$(basename $dotfile)
     if [[ -f $HOME/$file || -d $HOME/$file ]]
