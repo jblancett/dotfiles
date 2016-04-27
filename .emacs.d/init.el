@@ -1,11 +1,28 @@
-;;; Load packages
+;;; Packags
 (setq package-enable-at-startup nil)
-(package-initialize)
-
-;;; Package Repos
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
+;                         ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+(setq my-package-list
+      '(use-package
+	flx-ido ido-sort-mtime ido-select-window
+	neotree
+	multi-term
+	projectile projectile-rails
+	magit magit-find-file
+	ruby-mode ruby-tools ruby-end ruby-dev
+	python-mode
+	nginx-mode
+	go-mode go-eldoc go-projectile
+	yaml-mode
+	))
+(dolist (pkg my-package-list)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+(use-package flx-ido)
 
 ;;; windmove
 (when (fboundp 'windmove-default-keybindings)
