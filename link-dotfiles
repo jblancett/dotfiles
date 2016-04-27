@@ -9,11 +9,19 @@ do
 	if [ -L $HOME/$file ]
 	then
 	    echo "link already exists - $HOME/$file > $(readlink $HOME/$file)"
-
+	    continue
 	else
 	    echo "file already exists - $dotfile"
+	    read -p "Do you want to overwrite it? " -n 1 -r overwrite
+	    echo
+	    if [[ "x$overwrite" =~ x[yY] ]]
+	    then
+		echo "moving $file to $file.bak"
+		mv $HOME/$file $HOME/$file.bak
+	    else
+		continue
+	    fi
 	fi
-	continue
     fi
     echo "linking $HOME/$file to $dotfile"
     ln -s $dotfile $HOME/$file
