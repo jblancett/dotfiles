@@ -9,6 +9,9 @@ alias ansible-mode='eval "$(ansible-dk shell-init bash)"; export PS1="(ADK)$PS1"
 alias docker-mode='eval "$(docker-machine env default)"; export PS1="(docker)$PS1"'
 alias perl-mode='source ~/perl5/perlbrew/etc/bashrc; export PS1="(perlbrew)$PS1"'
 
+#check for colordiff and alias it to diff
+which colordiff &>/dev/null && alias diff=colordiff
+
 #check for source-highlight lesspipe and set it up
 lesspipe=$(which src-hilite-lesspipe.sh)
 if [ -z "$lesspipe" ]
