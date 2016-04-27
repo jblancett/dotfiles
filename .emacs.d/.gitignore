@@ -2,6 +2,6 @@ auto-save-list/*
 saves/*
 saves*~
 elpa/*
-\#\!*
+\#*
 ido.last
 projectile-bookmarks.eld
