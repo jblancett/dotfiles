@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ $(whoami) != 'root' ]
+then
+    echo "This needs to be run as root"
+    sudo $0
+    exit
+fi
+
 apt-get update && apt-get install -y wget apt-transport-https ca-certificates software-properties-common
 
 ppas=("ubuntu-elisp/ppa" "brightbox/ruby-ng" "git-core/ppa")
