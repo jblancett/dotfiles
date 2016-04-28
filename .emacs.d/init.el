@@ -1,8 +1,14 @@
 ;;; Package repos
 (setq package-enable-at-startup nil)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-;                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives '(("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+			 ("gnu" . "http://elpa.gnu.org/packages/")))
+(setq package-archive-priorities
+      '(("melpa" . 30)
+	("melpa-stable" . 20)
+	("marmalade" . 10)
+	("gnu" . 0)))
 (package-initialize)
 
 (custom-set-variables
