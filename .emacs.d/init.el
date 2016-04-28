@@ -9,7 +9,6 @@
 (setq my-package-list
       '(use-package
 	flx-ido ido-sort-mtime ido-select-window
-	neotree
 	multi-term
 	projectile projectile-rails
 	magit magit-find-file
@@ -92,12 +91,6 @@
 
 ;;; magit
 (global-set-key (kbd "C-c s") 'magit-status)
-
-;;; neotree
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-(setq projectile-switch-project-action 'neotree-projectile-action)
-(custom-set-faces '(neo-file-link-face ((t (:foreground "white")))))
 
 ;;; other window hotkey
 (global-set-key (kbd "C-o") 'other-window)
