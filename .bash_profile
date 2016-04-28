@@ -55,3 +55,10 @@ _vpns() {
     COMPREPLY=( $(compgen -W "$vpns" -- ${COMP_WORDS[COMP_CWORD]}) )
 }
 complete -F _vpns vpn-start vpn-stop vpn-status
+
+if [ $(uname) == 'Darwin' ]
+then
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+    fi
+fi
