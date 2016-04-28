@@ -1,28 +1,31 @@
-;;; Packags
+;;; Package repos
 (setq package-enable-at-startup nil)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;                         ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (go-eldoc go-mode projectile magit yaml-mode use-package ruby-tools ruby-mode ruby-end ruby-dev python-mode projectile-rails nginx-mode multi-term monokai-theme magit-find-file ido-sort-mtime ido-select-window go-projectile flx-ido))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+;;; Install selected packages
 (unless package-archive-contents
   (package-refresh-contents))
-(setq my-package-list
-      '(use-package
-	flx-ido ido-sort-mtime ido-select-window
-	multi-term
-	projectile projectile-rails
-	magit magit-find-file
-	ruby-mode ruby-tools ruby-end ruby-dev
-	python-mode
-	nginx-mode
-	go-mode go-eldoc go-projectile
-	yaml-mode
-	monokai-theme
-	))
-(dolist (pkg my-package-list)
+(dolist (pkg package-selected-packages)
   (unless (package-installed-p pkg)
     (package-install pkg)))
-(use-package flx-ido)
 
 ;;; windmove
 (when (fboundp 'windmove-default-keybindings)
