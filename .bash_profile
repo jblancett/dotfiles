@@ -29,6 +29,17 @@ git-add-ignore-whitespace () {
 #    git checkout -- $@
 }
 
+kitchen-local() {
+    file=.kitchen.$1.yml
+    if [ -e $file ]
+    then
+	echo "using $file for KITCHEN_LOCAL_YAML"
+	export KITCHEN_LOCAL_YAML=$file
+    else
+	echo "$file does not exist - doing nothing"
+    fi
+}
+
 vpn-start() {
     sudo /etc/init.d/openvpn start $1
 }
