@@ -56,6 +56,12 @@ _vpns() {
 }
 complete -F _vpns vpn-start vpn-stop vpn-status
 
+if [ -d ~/.rbenv/bin ]
+then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
 if [ $(uname) == 'Darwin' ]
 then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
