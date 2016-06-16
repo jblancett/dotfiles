@@ -68,3 +68,8 @@ then
 	. $(brew --prefix)/etc/bash_completion
     fi
 fi
+
+# this will fix ssh agent in stale tmux sessions
+fix_ssh_auth_sock() {
+    eval $(tmux show-env | sed -n 's/^\(SSH_AUTH_SOCK=.*\)/export \1/p')
+}
