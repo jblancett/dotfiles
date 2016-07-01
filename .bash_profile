@@ -14,7 +14,7 @@ alias perl-mode='source ~/perl5/perlbrew/etc/bashrc; export PS1="(perlbrew)$PS1"
 which colordiff &>/dev/null && alias diff=colordiff
 
 #check for source-highlight lesspipe and set it up
-lesspipe=$(which src-hilite-lesspipe.sh)
+lesspipe=$(which src-hilite-lesspipe.sh 2>/dev/null)
 if [ -z "$lesspipe" ]
 then
     lesspipe=/usr/share/source-highlight/src-hilite-lesspipe.sh
