@@ -3,7 +3,7 @@ export EDITOR="emacsclient -nw"
 export ALTERNATE_EDITOR=""
 
 alias ec='emacsclient -nw'
-alias tm='tmux attach || tmux new'
+alias tm='tmux attach -d || tmux new'
 
 alias chef-mode='eval "$(chef shell-init $(basename $SHELL))"; export PS1="(CDK)$PS1"; export PATH="/opt/gimme-vagrant/bin:$PATH"'
 alias ansible-mode='eval "$(ansible-dk shell-init bash)"; export PS1="(ADK)$PS1"'
