@@ -18,7 +18,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (go-eldoc go-mode projectile magit yaml-mode use-package ruby-tools ruby-mode ruby-end ruby-dev python-mode projectile-rails nginx-mode multi-term monokai-theme magit-find-file ido-sort-mtime ido-select-window go-projectile flx-ido))))
+    (php-mode go-eldoc go-mode projectile magit yaml-mode use-package ruby-tools ruby-mode ruby-end ruby-dev python-mode projectile-rails nginx-mode multi-term monokai-theme magit-find-file ido-sort-mtime ido-select-window go-projectile flx-ido))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -206,6 +206,11 @@
   :init (progn
           (add-hook 'before-save-hook  #'gofmt-before-save)
           (add-hook 'go-mode-hook 'go-eldoc-setup)))
+
+;;; php-mode
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
 
 ; handle tmux's xterm-keys
 ;; put the following line in your ~/.tmux.conf:
