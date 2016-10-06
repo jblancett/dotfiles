@@ -194,6 +194,14 @@
 ;;; f5 refresh
 (global-set-key (kbd "<f5>") 'revert-buffer)
 
+;;; scrolling
+(fset 'down-one-line
+      "\C-u1\C-v")
+(fset 'up-one-line
+      "\C-u1\C-[v")
+(global-set-key (kbd "M-<up>") 'up-one-line)
+(global-set-key (kbd "M-<down>") 'down-one-line)
+
 ;;; go-eldoc
 (use-package go-eldoc
   :ensure t)
