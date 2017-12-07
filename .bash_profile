@@ -68,6 +68,8 @@ then
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
     fi
+    export PATH=$PATH:~/android-sdk-macosx/platform-tools:/usr/local/share/pypy
+    #export PYTHONPATH=/usr/local/Cellar/pypy/5.6.0/libexec/site-packages
 fi
 
 # this will fix ssh agent in stale tmux sessions
